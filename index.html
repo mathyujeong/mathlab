@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>유정쌤의 실험실 - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#5b487f",
+              "error-container": "#fd795a",
+              "tertiary-container": "#fadcd2",
+              "tertiary-dim": "#634e47",
+              "on-secondary": "#fef7ff",
+              "primary": "#954a17",
+              "surface-dim": "#ecd5cb",
+              "on-background": "#3d2f28",
+              "surface-container-low": "#fff1eb",
+              "surface-container-high": "#f9e4da",
+              "on-primary-fixed-variant": "#672c00",
+              "primary-fixed": "#ff9e64",
+              "secondary-container": "#ebdcff",
+              "surface": "#fff8f6",
+              "on-primary-container": "#5a2500",
+              "inverse-surface": "#130d09",
+              "surface-bright": "#fff8f6",
+              "on-secondary-fixed": "#48356b",
+              "on-tertiary-container": "#624d45",
+              "on-primary": "#fff7f5",
+              "outline-variant": "#c3aea4",
+              "secondary-fixed-dim": "#dfccff",
+              "on-error-container": "#6e1400",
+              "on-secondary-fixed-variant": "#65518a",
+              "tertiary-fixed-dim": "#ebcec4",
+              "primary-dim": "#863f0a",
+              "error-dim": "#791903",
+              "background": "#fff8f6",
+              "surface-tint": "#954a17",
+              "error": "#a73b21",
+              "on-surface": "#3d2f28",
+              "primary-fixed-dim": "#ef9158",
+              "on-primary-fixed": "#361400",
+              "inverse-on-surface": "#a79a95",
+              "outline": "#89776e",
+              "on-surface-variant": "#6c5c53",
+              "tertiary": "#705a52",
+              "surface-container-highest": "#f5ded3",
+              "inverse-primary": "#ff9e64",
+              "secondary": "#69558e",
+              "on-tertiary-fixed": "#4e3b34",
+              "primary-container": "#ff9e64",
+              "on-error": "#fff7f6",
+              "surface-variant": "#f5ded3",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-fixed": "#fadcd2",
+              "on-tertiary": "#fff7f5",
+              "surface-container": "#feeae1",
+              "secondary-dim": "#5c4981",
+              "secondary-fixed": "#ebdcff",
+              "on-tertiary-fixed-variant": "#6c574f"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Be Vietnam Pro"],
+              "label": ["Be Vietnam Pro"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Be Vietnam Pro', sans-serif;
+        background-color: #fff8f6;
+        color: #3d2f28;
+      }
+      .discovery-tile {
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-6 py-4 max-w-full bg-[#fff8f6] dark:bg-[#1a110d] no-border flat no shadows">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-extrabold text-[#954a17] dark:text-[#ff9e64] tracking-tighter font-['Plus_Jakarta_Sans']">유정쌤의 실험실</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[#954a17] dark:text-[#ff9e64] font-bold border-b-2 border-[#954a17] font-['Plus_Jakarta_Sans'] text-lg tracking-tight px-1 transition-all active:scale-95 opacity-80" href="#">실험실</a>
+<a class="text-[#6c5c53] dark:text-[#c3aea4] font-['Plus_Jakarta_Sans'] text-lg tracking-tight hover:bg-[#feeae1] dark:hover:bg-[#3d2f28] transition-colors duration-300 px-2 rounded-lg" href="#">기록</a>
+<a class="text-[#6c5c53] dark:text-[#c3aea4] font-['Plus_Jakarta_Sans'] text-lg tracking-tight hover:bg-[#feeae1] dark:hover:bg-[#3d2f28] transition-colors duration-300 px-2 rounded-lg" href="#">자료</a>
+<a class="text-[#6c5c53] dark:text-[#c3aea4] font-['Plus_Jakarta_Sans'] text-lg tracking-tight hover:bg-[#feeae1] dark:hover:bg-[#3d2f28] transition-colors duration-300 px-2 rounded-lg" href="#">설정</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-[#feeae1] transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[#954a17]">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-[#feeae1] transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[#954a17]">account_circle</span>
+</button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-12 space-y-20">
+<!-- Hero Archive Header -->
+<section class="relative overflow-hidden rounded-xl h-64 flex items-center px-12 bg-gradient-to-br from-primary to-primary-container">
+<div class="relative z-10 text-on-primary">
+<h1 class="font-headline font-extrabold text-5xl tracking-tight mb-4">The Curated Laboratory</h1>
+<p class="font-body text-xl opacity-90 max-w-2xl">수학적 개념이 발견되는 특별한 아카이브 공간입니다.<br/>유정쌤과 함께 수학의 원리를 실험해보세요.</p>
+</div>
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-20 pointer-events-none">
+<div class="w-full h-full bg-surface-container-lowest transform rotate-12 translate-x-20 translate-y-10 rounded-xl"></div>
+</div>
+</section>
+<!-- Section 1: Number & Operations -->
+<section class="space-y-10">
+<div class="flex items-center">
+<div class="bg-primary-container px-8 py-3 rounded-full">
+<h2 class="font-headline font-bold text-2xl text-on-primary-container tracking-tight">수와 연산 - 바이브코딩</h2>
+</div>
+</div>
+<!-- Bento Grid of Discovery Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Tile 1 -->
+<button class="discovery-tile group relative p-8 h-56 rounded-xl flex flex-col justify-between items-start text-left transition-all hover:scale-[1.02] hover:bg-surface-container-high shadow-[0_20px_40px_rgba(61,47,40,0.06)] active:scale-95">
+<div class="p-3 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">grid_view</span>
+</div>
+<span class="font-headline font-bold text-xl text-on-surface">에라토스테네스의 체</span>
+</button>
+<!-- Tile 2 -->
+<button class="discovery-tile group relative p-8 h-56 rounded-xl flex flex-col justify-between items-start text-left transition-all hover:scale-[1.02] hover:bg-surface-container-high shadow-[0_20px_40px_rgba(61,47,40,0.06)] active:scale-95">
+<div class="p-3 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">swords</span>
+</div>
+<span class="font-headline font-bold text-xl text-on-surface">소인수분해 대결</span>
+</button>
+<!-- Tile 3 -->
+<button class="discovery-tile group relative p-8 h-56 rounded-xl flex flex-col justify-between items-start text-left transition-all hover:scale-[1.02] hover:bg-surface-container-high shadow-[0_20px_40px_rgba(61,47,40,0.06)] active:scale-95">
+<div class="p-3 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">water_drop</span>
+</div>
+<span class="font-headline font-bold text-xl text-on-surface">단비1</span>
+</button>
+<!-- Tile 4 -->
+<button class="discovery-tile group relative p-8 h-56 rounded-xl flex flex-col justify-between items-start text-left transition-all hover:scale-[1.02] hover:bg-surface-container-high shadow-[0_20px_40px_rgba(61,47,40,0.06)] active:scale-95">
+<div class="p-3 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">show_chart</span>
+</div>
+<span class="font-headline font-bold text-xl text-on-surface">수직선 탐구</span>
+</button>
+<!-- Tile 5 -->
+<button class="discovery-tile group relative p-8 h-56 rounded-xl flex flex-col justify-between items-start text-left transition-all hover:scale-[1.02] hover:bg-surface-container-high shadow-[0_20px_40px_rgba(61,47,40,0.06)] active:scale-95">
+<div class="p-3 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">casino</span>
+</div>
+<span class="font-headline font-bold text-xl text-on-surface">소수 로또 (1-1000)</span>
+</button>
+<!-- Tile 6 -->
+<button class="discovery-tile group relative p-8 h-56 rounded-xl flex flex-col justify-between items-start text-left transition-all hover:scale-[1.02] hover:bg-surface-container-high shadow-[0_20px_40px_rgba(61,47,40,0.06)] active:scale-95">
+<div class="p-3 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">groups</span>
+</div>
+<span class="font-headline font-bold text-xl text-on-surface">주사위 연산 팀 배틀</span>
+</button>
+<!-- Tile 7 -->
+<button class="discovery-tile group relative p-8 h-56 rounded-xl flex flex-col justify-between items-start text-left transition-all hover:scale-[1.02] hover:bg-surface-container-high shadow-[0_20px_40px_rgba(61,47,40,0.06)] active:scale-95">
+<div class="p-3 bg-primary/10 rounded-2xl group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary text-3xl">opacity</span>
+</div>
+<span class="font-headline font-bold text-xl text-on-surface">단비2</span>
+</button>
+</div>
+</section>
+<!-- Section 2: Letters & Expressions -->
+<section class="space-y-10 pb-12">
+<div class="flex items-center">
+<div class="bg-secondary-container px-8 py-3 rounded-full">
+<h2 class="font-headline font-bold text-2xl text-on-secondary-container tracking-tight">문자와 식 - 바이브코딩</h2>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Tile 1 -->
+<button class="discovery-tile group relative p-8 h-56 rounded-xl flex flex-col justify-between items-start text-left transition-all hover:scale-[1.02] hover:bg-surface-container-high shadow-[0_20px_40px_rgba(61,47,40,0.06)] active:scale-95 border-2 border-secondary/10">
+<div class="p-3 bg-secondary/10 rounded-2xl group-hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined text-secondary text-3xl">precision_manufacturing</span>
+</div>
+<span class="font-headline font-bold text-xl text-on-surface">수학변환기계</span>
+</button>
+<!-- Placeholder for future modules to maintain layout integrity -->
+<div class="p-8 h-56 rounded-xl border-4 border-dashed border-outline-variant/20 flex flex-col justify-center items-center opacity-40">
+<span class="material-symbols-outlined text-outline text-4xl mb-2">add_circle</span>
+<span class="font-label text-sm">신규 실험 준비 중</span>
+</div>
+<div class="p-8 h-56 rounded-xl border-4 border-dashed border-outline-variant/20 flex flex-col justify-center items-center opacity-40">
+<span class="material-symbols-outlined text-outline text-4xl mb-2">add_circle</span>
+<span class="font-label text-sm">신규 실험 준비 중</span>
+</div></div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-[#fff1eb]/80 dark:bg-[#251a14]/80 backdrop-blur-xl border-t border-[#c3aea4]/15 shadow-[0_-10px_40px_rgba(61,47,40,0.06)] rounded-t-[3rem]">
+<button class="flex flex-col items-center justify-center bg-[#ebdcff] dark:bg-[#4a3a66] text-[#5b487f] dark:text-[#ebdcff] rounded-full px-5 py-2 transition-all active:scale-90 duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">science</span>
+<span class="font-['Be_Vietnam_Pro'] font-medium text-[11px]">실험실</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#705a52] dark:text-[#c3aea4] px-5 py-2 hover:scale-110 transition-transform active:scale-90 duration-200">
+<span class="material-symbols-outlined">auto_stories</span>
+<span class="font-['Be_Vietnam_Pro'] font-medium text-[11px]">기록</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#705a52] dark:text-[#c3aea4] px-5 py-2 hover:scale-110 transition-transform active:scale-90 duration-200">
+<span class="material-symbols-outlined">folder_open</span>
+<span class="font-['Be_Vietnam_Pro'] font-medium text-[11px]">자료</span>
+</button>
+<button class="flex flex-col items-center justify-center text-[#705a52] dark:text-[#c3aea4] px-5 py-2 hover:scale-110 transition-transform active:scale-90 duration-200">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Be_Vietnam_Pro'] font-medium text-[11px]">설정</span>
+</button>
+</nav>
+</body></html>
